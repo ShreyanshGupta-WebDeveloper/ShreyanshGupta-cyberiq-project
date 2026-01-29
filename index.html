@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberIQ - Cybersecurity Training Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="matrix"></canvas>
+
+<!-- NAVBAR -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+    <h1 class="logo">CyberIQ</h1>
+    <ul role="menubar">
+        <li role="menuitem" tabindex="0" onclick="showSection('home')">Home</li>
+        <li role="menuitem" tabindex="0" onclick="showSection('quiz')">Puzzle Test</li>
+        <li role="menuitem" tabindex="0" onclick="showSection('leaderboard')">Leaderboard</li>
+        <li role="menuitem" tabindex="0" onclick="showSection('about')">About</li>
+    </ul>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="section" aria-labelledby="home-title">
+    <header>
+        <h1 class="home-title" id="animated-title" aria-live="polite"></h1>
+    </header>
+
+    <main>
+        <article>
+            <p class="home-text">
+                CyberIQ is an advanced cyber‑security logical puzzle platform designed
+                to sharpen your hacking awareness, security logic, and defensive thinking.
+            </p>
+
+            <p class="home-text">
+                Test your knowledge of firewalls, phishing, encryption, passwords,
+                network security, and ethical hacking concepts in a fun but realistic way.
+            </p>
+        </article>
+
+        <!-- REVIEWS -->
+        <section aria-labelledby="reviews-heading">
+            <h2 id="reviews-heading" class="sub-heading">Community Reviews</h2>
+            <div class="reviews" id="reviews" role="region" aria-live="polite">
+                <div class="review" role="listitem"><strong>Alice:</strong> Super cool platform — feels like real cyber labs.</div>
+                <div class="review" role="listitem"><strong>Bob:</strong> Good logical puzzles, very hacking-oriented.</div>
+                <div class="review" role="listitem"><strong>Charlie:</strong> Makes you think like a security analyst.</div>
+                <div class="review" role="listitem"><strong>Diana:</strong> Clean UI, hacker vibes, and meaningful questions.</div>
+            </div>
+        </section>
+
+        <!-- START BUTTON -->
+        <footer>
+            <button class="start-btn" onclick="showSection('quiz')" aria-label="Start the puzzle test">
+                ▶ START PUZZLE TEST
+            </button>
+        </footer>
+    </main>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz" class="section hidden" aria-labelledby="quiz-header">
+    <div class="container big">
+        <h2 class="quiz-title" id="quiz-header" aria-live="polite">Are you excited to try a cybersecurity logic puzzle challenge today?</h2>
+        <div class="quiz-options" id="quiz-options" role="group" aria-labelledby="quiz-header">
+            <button onclick="handleExcitement(true)" aria-label="Yes, I'm excited to take the puzzle test">Yes</button>
+            <button onclick="handleExcitement(false)" aria-label="No, I'm not excited to take the puzzle test">No</button>
+        </div>
+
+        <div class="timer-bar-container hidden" role="timer" aria-label="Time remaining">
+            <div class="timer-bar" id="timer-bar"></div>
+        </div>
+
+        <p id="question" aria-live="polite"></p>
+        <div class="options" role="radiogroup" aria-label="Quiz options"></div>
+        <p id="result" aria-live="polite"></p>
+    </div>
+</section>
+
+<section id="leaderboard" class="section hidden leaderboard-bg" aria-labelledby="leaderboard-title">
+  <div class="container leaderboard-container">
+    <h2 id="leaderboard-title">🏆 Leaderboard</h2>
+    <table aria-label="Leaderboard rankings">
+      <thead>
+        <tr>
+          <th scope="col">Rank</th>
+          <th scope="col">Name</th>
+          <th scope="col">Score</th>
+        </tr>
+      </thead>
+      <tbody id="leaderboardList" role="rowgroup"></tbody>
+    </table>
+
+    <div class="goal" aria-label="Achievement goals">
+      🎯 <b>Your Tasks:</b><br>
+      • Defeat <span class="neon">Neon</span> in <b>Easy</b><br>
+      • Defeat <span class="null">Null</span> in <b>Hard</b>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section hidden" aria-labelledby="about-title">
+    <h2 id="about-title">About CyberIQ</h2>
+    <p>
+        CyberIQ spreads cyber-security awareness through interactive logical puzzles inspired by real-world security threats.
+    </p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
