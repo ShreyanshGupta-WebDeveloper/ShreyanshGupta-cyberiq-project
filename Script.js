@@ -333,4 +333,5 @@ function loadLeaderboard() {
 // Save leaderboard to localStorage
 function saveLeaderboard() {
   localStorage.setItem('cyberiq_leaderboard', JSON.stringify(window.leaderboard));
+
 }
